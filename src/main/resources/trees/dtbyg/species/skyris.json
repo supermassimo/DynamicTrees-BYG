@@ -1,9 +1,9 @@
 {
   "family": "dtbyg:skyris",
-  "tapering": 0.15,
+  "tapering": 0.3,
   "signal_energy": 22.0,
-  "up_probability": 5,
-  "lowest_branch_height": 7,
+  "up_probability": 6,
+  "lowest_branch_height": 6,
   "growth_rate": 0.7,
   "leaves_properties": "dtbyg:skyris",
   "environment_factors" : {
@@ -27,8 +27,8 @@
     {
       "name": "alt_leaves",
       "properties": {
-        "alternative_leaves": "dtbyg:green_apple_skyris",
-        "place_chance": 0
+        "alternative_leaves": "dtbyg:flowering_skyris",
+        "place_chance": 0.25
       }
     },
     {
@@ -36,6 +36,17 @@
       "properties": {
         "fruit": "dtbyg:green_apple"
       }
-    }
+    },
+    {
+      "name": "vines",
+      "properties": {
+        "quantity": 16,
+        "max_length": 16,
+        "block": "byg:skyris_vine"
+      }
+    },
+    "conifer_topper",
+    "bottom_flare",
+    "mound"
   ]
 }

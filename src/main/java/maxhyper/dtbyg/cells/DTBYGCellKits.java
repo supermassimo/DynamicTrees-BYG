@@ -15,7 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 public class DTBYGCellKits {
 
     public static void register(final Registry<CellKit> registry) {
-        registry.registerAll(PALM, SPARSE, POPLAR, SMALL_DECIDUOUS, WILLOW, ROUND_CONIFER, SYTHIAN_FUNGUS, LAMENT);
+        registry.registerAll(PALM, SPARSE, POPLAR, SMALL_DECIDUOUS, WILLOW, ROUND_CONIFER, SYTHIAN_FUNGUS, LAMENT, SKYRIS);
     }
 
     public static final CellKit PALM = new CellKit(new ResourceLocation(DynamicTreesBYG.MOD_ID, "palm")) {
@@ -443,6 +443,52 @@ public class DTBYGCellKits {
             return 3;
         }
 
+    };
+
+    public static final CellKit SKYRIS = new CellKit(DynamicTreesBYG.location("skyris")) {
+        private final Cell skyrisBranch = new Cell() {
+            final int[] map = new int[]{0, 3, 5, 5, 5, 5};
+
+            public int getValue() {
+                return 5;
+            }
+
+            public int getValueFromSide(Direction side) {
+                return this.map[side.ordinal()];
+            }
+        };
+        private final Cell coniferTopBranch = new ConiferTopBranchCell();
+        private final Cell[] skyrisLeafCells;
+        private final CellKits.BasicSolver skyrisSolver;
+
+        {
+            this.skyrisLeafCells = new Cell[]{CellNull.NULL_CELL, new AcaciaLeafCell(1), new AcaciaLeafCell(2), new AcaciaLeafCell(3), new AcaciaLeafCell(4), new AcaciaLeafCell(5), new AcaciaLeafCell(6), new AcaciaLeafCell(7)};
+            this.skyrisSolver = new CellKits.BasicSolver(new short[]{1300, 1059, 1042, 786, 529});
+        }
+
+        public Cell getCellForLeaves(int hydro) {
+            return this.skyrisLeafCells[hydro];
+        }
+
+        public Cell getCellForBranch(int radius, int meta) {
+            if (meta == 1) {
+                return this.coniferTopBranch;
+            } else {
+                return radius == 1 ? this.skyrisBranch : CellNull.NULL_CELL;
+            }
+        }
+
+        public SimpleVoxmap getLeafCluster() {
+            return LeafClusters.ACACIA;
+        }
+
+        public CellSolver getCellSolver() {
+            return this.skyrisSolver;
+        }
+
+        public int getDefaultHydration() {
+            return 4;
+        }
     };
 
 }

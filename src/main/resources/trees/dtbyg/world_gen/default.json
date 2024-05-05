@@ -70,8 +70,10 @@
     "apply": {
       "species": {
         "random": {
-          "dtbyg:jacaranda": 1,
-          "dtbyg:indigo_jacaranda": 1
+          "dtbyg:jacaranda": 3,
+          "dtbyg:indigo_jacaranda": 3,
+          "dtbyg:mega_jacaranda": 1,
+          "dtbyg:mega_indigo_jacaranda": 1
         }
       },
       "density": [ 0.2 ],

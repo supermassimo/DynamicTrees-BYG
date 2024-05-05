@@ -1,6 +1,6 @@
 {
   "primitive_leaves": "byg:skyris_leaves",
-  "cell_kit": "dynamictrees:acacia",
+  "cell_kit": "dtbyg:skyris",
   "model_overrides": {
     "leaves": "byg:block/skyris/leaves"
   },

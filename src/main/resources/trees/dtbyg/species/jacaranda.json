@@ -15,15 +15,9 @@
   "perfect_biomes": {
     "name": ".*jacaranda.*"
   },
+  "mega_species": "dtbyg:mega_jacaranda",
   "primitive_sapling": "byg:jacaranda_sapling",
   "features": [
-    {
-      "name": "alt_leaves",
-      "properties": {
-        "alternative_leaves": "dtbyg:ripe_joshua",
-        "place_chance": 0
-      }
-    },
     "bottom_flare",
     {
       "name": "roots",
